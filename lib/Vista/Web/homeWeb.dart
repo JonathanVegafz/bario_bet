@@ -1,14 +1,23 @@
+import 'package:bario_bet/Modelos/formulario.dart';
+import 'package:bario_bet/Modelos/usuario.dart';
 import 'package:bario_bet/Vista/Web/empateWidget.dart';
+import 'package:bario_bet/Vista/Web/factorWidget.dart';
 import 'package:bario_bet/Vista/inputText.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'Equipo/equipoWidget.dart';
+import 'Equipo/factoresWidget.dart';
 
 class HomeWeb extends StatefulWidget {
+  Formulario formulario = new Formulario.vacio();
+  HomeWeb({ Key? key }) : super(key: key);
+  
 
-  const HomeWeb({ Key? key }) : super(key: key);
+  static List<FactorWidget> listasFactor = [
+
+  ];
 
   @override
   _HomeWebState createState() => _HomeWebState();
@@ -21,6 +30,7 @@ class _HomeWebState extends State<HomeWeb> {
   InputText inputNombre = InputText("Nombre", TextInputType.name);
   InputText inputCorreo = InputText("E-mail", TextInputType.name);
   // controllerCorreo = TextEditingController();
+
 
   @override
   void initState(){
@@ -53,25 +63,35 @@ class _HomeWebState extends State<HomeWeb> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const EquipoWidget(
+                          EquipoWidget(
                             nombreEquipo: "ColoColo",
                             factor: 1.5,
                             tipoEquipo: "LOCAL",
                             pathImagenEquipo: "assets/ColoColo.png",
+                            form: widget.formulario,
                           ),
                           Column(
                             children: [
                               Image.asset("assets/VS.png", width: 200, height: 200,),
-                              const SizedBox(height: 40,),
-                              EmpateWidget()
+                              //const SizedBox(height: 40,),
+                              //EmpateWidget()
                             ],
                           ),
-                          const EquipoWidget(
+                          EquipoWidget(
                             nombreEquipo: "U. Chile",
                             factor: 0.5,
                             tipoEquipo: "VISITA",
                             pathImagenEquipo: "assets/U.png",
+                            form: widget.formulario,
                           ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FactoresWidget(titulo: "Factor", factor: 0.3, id: 0, form: widget.formulario),
+                          FactoresWidget(titulo: "Empate", factor: 0.5, id: 1, form: widget.formulario),
+                          FactoresWidget(titulo: "Factor", factor: 0.8, id: 2, form: widget.formulario),
                         ],
                       ),
                       Text("Formulario"),
@@ -95,6 +115,9 @@ class _HomeWebState extends State<HomeWeb> {
                             InkWell(
                               onTap: () => {
                                 setState((){
+                                  
+                                  print(widget.formulario.completado(inputNombre.controller.text, inputCorreo.controller.text));
+                                  widget.formulario = new Formulario.vacio();
                                   inputNombre.controller.text = "";
                                   inputCorreo.controller.text = "";
                                 })

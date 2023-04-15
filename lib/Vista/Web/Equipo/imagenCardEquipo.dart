@@ -12,7 +12,7 @@ class ImagenCardEquipo extends StatelessWidget {
     return Container(
       width: 90,
       height: 90,
-      margin: EdgeInsetsDirectional.only(top: 15),
+      margin: EdgeInsetsDirectional.only(top: 20),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(50),

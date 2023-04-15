@@ -1,4 +1,6 @@
+import 'package:bario_bet/Vista/Admin/adminWidget.dart';
 import 'package:bario_bet/Vista/Web/homeWeb.dart';
+import 'package:bario_bet/Vista/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: HomeWeb(),
+      home: Home()
     );
   }
 }
