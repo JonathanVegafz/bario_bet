@@ -78,7 +78,7 @@ final _unfocusNode = FocusNode();
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(50),
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                 fit: BoxFit.contain,
                                 image: AssetImage("assets/ColoColo.png")
                               ),
@@ -97,7 +97,7 @@ final _unfocusNode = FocusNode();
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text("ColoColo", style: GoogleFonts.lato(fontSize: 25, fontWeight: FontWeight.w300),),
-                              Text("Factor: " + (0.2).toString(), style: GoogleFonts.lato(fontSize: 17, fontWeight: FontWeight.bold, color:Colors.black)),
+                              //Text("Factor: " + (0.2).toString(), style: GoogleFonts.lato(fontSize: 17, fontWeight: FontWeight.bold, color:Colors.black)),
                             ],
                           )
                         ],
@@ -113,7 +113,7 @@ final _unfocusNode = FocusNode();
                     },
                     child: Container(
                       height: 100,
-                      margin: EdgeInsetsDirectional.symmetric(horizontal: 30),
+                      margin: const EdgeInsetsDirectional.symmetric(horizontal: 30),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: Colors.white,
@@ -153,35 +153,91 @@ final _unfocusNode = FocusNode();
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text("U. Chile", style: GoogleFonts.lato(fontSize: 25, fontWeight: FontWeight.w300),),
-                              Text("Factor: " + (0.4).toString(), style: GoogleFonts.lato(fontSize: 17, fontWeight: FontWeight.bold, color:Colors.black)),
+                              //Text("Factor: " + (0.4).toString(), style: GoogleFonts.lato(fontSize: 17, fontWeight: FontWeight.bold, color:Colors.black)),
                             ],
                           )
                         ],
                       ),
                   )
           ),
-                  Container(
-                    width: 180,
-                    height: 90,
-                    margin: EdgeInsetsDirectional.all(30),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color:  Colors.white,
-                      boxShadow: const[
-                        BoxShadow(
-                          blurRadius: 10,
-                          color: Color(0x44111417),
-                          offset: Offset(0, 2),
-                        )
-                      ]
-                    ),
-                    child: Column(
+                  Padding(
+                    padding: const EdgeInsetsDirectional.symmetric(vertical: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const SizedBox(height: 10),
-                        Text("Empate", style: GoogleFonts.lato(fontSize: 17, fontWeight: FontWeight.bold, color:Colors.black)),
-                        const SizedBox(height: 10),
-                        Text((0.7).toString(),style: GoogleFonts.blackOpsOne(fontSize: 30, fontWeight: FontWeight.bold, color:Colors.black))
-                      ]
+                        Container(
+                          width: 110,
+                          height: 90,
+                          margin: EdgeInsetsDirectional.symmetric(horizontal: 10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color:  Colors.white,
+                            boxShadow: const[
+                              BoxShadow(
+                                blurRadius: 10,
+                                color: Color(0x44111417),
+                                offset: Offset(0, 2),
+                              )
+                            ]
+                          ),
+                          child: Column(
+                            children: [
+                              const SizedBox(height: 10),
+                              Text("Local", style: GoogleFonts.lato(fontSize: 17, fontWeight: FontWeight.bold, color:Colors.black)),
+                              const SizedBox(height: 10),
+                              Text((0.7).toString(),style: GoogleFonts.blackOpsOne(fontSize: 30, fontWeight: FontWeight.bold, color:Colors.black))
+                            ]
+                          ),
+                        ),
+                        Container(
+                          width: 110,
+                          height: 90,
+                          margin: EdgeInsetsDirectional.symmetric(horizontal: 20),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color:  Colors.white,
+                            boxShadow: const[
+                              BoxShadow(
+                                blurRadius: 10,
+                                color: Color(0x44111417),
+                                offset: Offset(0, 2),
+                              )
+                            ]
+                          ),
+                          child: Column(
+                            children: [
+                              const SizedBox(height: 10),
+                              Text("Empate", style: GoogleFonts.lato(fontSize: 17, fontWeight: FontWeight.bold, color:Colors.black)),
+                              const SizedBox(height: 10),
+                              Text((0.7).toString(),style: GoogleFonts.blackOpsOne(fontSize: 30, fontWeight: FontWeight.bold, color:Colors.black))
+                            ]
+                          ),
+                        ),
+                        Container(
+                          width: 110,
+                          height: 90,
+                          margin: EdgeInsetsDirectional.symmetric(horizontal: 20),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color:  Colors.white,
+                            boxShadow: const[
+                              BoxShadow(
+                                blurRadius: 10,
+                                color: Color(0x44111417),
+                                offset: Offset(0, 2),
+                              )
+                            ]
+                          ),
+                          child: Column(
+                            children: [
+                              const SizedBox(height: 10),
+                              Text("Vicita", style: GoogleFonts.lato(fontSize: 17, fontWeight: FontWeight.bold, color:Colors.black)),
+                              const SizedBox(height: 10),
+                              Text((0.7).toString(),style: GoogleFonts.blackOpsOne(fontSize: 30, fontWeight: FontWeight.bold, color:Colors.black))
+                            ]
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   Text("Formulario"),

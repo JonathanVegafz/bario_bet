@@ -89,9 +89,9 @@ class _HomeWebState extends State<HomeWeb> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          FactoresWidget(titulo: "Factor", factor: 0.3, id: 0, form: widget.formulario),
+                          FactoresWidget(titulo: "Local", factor: 0.3, id: 0, form: widget.formulario),
                           FactoresWidget(titulo: "Empate", factor: 0.5, id: 1, form: widget.formulario),
-                          FactoresWidget(titulo: "Factor", factor: 0.8, id: 2, form: widget.formulario),
+                          FactoresWidget(titulo: "Visita", factor: 0.8, id: 2, form: widget.formulario),
                         ],
                       ),
                       Text("Formulario"),

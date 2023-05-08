@@ -33,14 +33,13 @@ class _AdminWidgetState extends State<AdminWidget> {
     super.dispose();
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Colors.greenAccent,
       appBar: AppBar(),
+      drawer: getDrawer(context),
       //drawer: getDrawer(context),
       body: SafeArea(
         child: GestureDetector(
@@ -48,7 +47,6 @@ class _AdminWidgetState extends State<AdminWidget> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              getDrawer(context),
               AdminWidget.pantalla
             ],
           )

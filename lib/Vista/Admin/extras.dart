@@ -8,13 +8,21 @@ import 'package:bario_bet/Vista/Admin/revisarUsuario.dart';
 import 'package:flutter/material.dart';
 
 class Extras extends StatefulWidget {
+  
   const Extras({ Key? key }) : super(key: key);
+
+  
 
   @override
   _ExtrasState createState() => _ExtrasState();
 }
 
 class _ExtrasState extends State<Extras> {
+
+  void cambioEstado(VoidCallback f){
+    setState(f);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,22 +31,24 @@ class _ExtrasState extends State<Extras> {
   }
 }
 
+
+
 Drawer getDrawer(BuildContext context){
   return Drawer(
     child: ListView(
       
       children: [
         ListTile(title: Text("Ingresar Equipo"), onTap: (){
-          AdminWidget.pantalla = IngresarEquipoWidget();
+          _ExtrasState().cambioEstado((){AdminWidget.pantalla = IngresarEquipoWidget();});
         },),
         ListTile(title: Text("Ingresar Partido"), onTap: (){
-          AdminWidget.pantalla = IngresarPartido();
+           _ExtrasState().cambioEstado((){AdminWidget.pantalla = IngresarPartido();});
         }),
         ListTile(title: Text("Revisar Usuarios"), onTap: (){
-          AdminWidget.pantalla = RevisarUsuario();
+          _ExtrasState().cambioEstado((){AdminWidget.pantalla = RevisarUsuario();});
         }),
         ListTile(title: Text("Revisar Apuestas"), onTap: (){
-          AdminWidget.pantalla = RevisarApuestas();
+           _ExtrasState().cambioEstado((){AdminWidget.pantalla = RevisarApuestas();});
         }),
       ],
     ),
