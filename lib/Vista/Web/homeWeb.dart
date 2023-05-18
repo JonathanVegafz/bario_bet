@@ -10,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'Equipo/equipoWidget.dart';
 import 'Equipo/factoresWidget.dart';
 
+const list = ["500", "1000", "2000", "5000"];
 class HomeWeb extends StatefulWidget {
   Formulario formulario = new Formulario.vacio();
   HomeWeb({ Key? key }) : super(key: key);
@@ -44,6 +45,7 @@ class _HomeWebState extends State<HomeWeb> {
     super.dispose();
   }
   
+  String dropdownValue = list.first;
 
   @override
   Widget build(BuildContext context) {
@@ -107,6 +109,29 @@ class _HomeWebState extends State<HomeWeb> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 inputNombre,
+                                const SizedBox(width: 50,),
+                                DropdownButton<String>(
+                                  value: dropdownValue,
+                                  icon: const Icon(Icons.arrow_downward),
+                                  elevation: 16,
+                                  style: const TextStyle(color: Colors.deepPurple),
+                                  underline: Container(
+                                    height: 2,
+                                    color: Colors.deepPurpleAccent,
+                                  ),
+                                  onChanged: (String? value) {
+                                    // This is called when the user selects an item.
+                                    setState(() {
+                                      dropdownValue = value!;
+                                    });
+                                  },
+                                  items: list.map<DropdownMenuItem<String>>((String value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value,
+                                      child: Text(value),
+                                    );
+                                  }).toList(),
+                                ),
                                 const SizedBox(width: 50,),
                                 inputCorreo
                               ],
